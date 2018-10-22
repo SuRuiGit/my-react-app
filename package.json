@@ -8,6 +8,10 @@
     "react-dom": "^16.5.2",
     "react-scripts": "2.0.5"
   },
+  "theme": {
+    "brand-primary": "red",
+    "color-text-base": "#333"
+  },
   "scripts": {
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
@@ -25,6 +29,8 @@
   ],
   "devDependencies": {
     "babel-plugin-import": "^1.10.0",
+    "less": "^3.8.1",
+    "less-loader": "^4.1.0",
     "react-app-rewired": "^1.6.2"
   }
 }
