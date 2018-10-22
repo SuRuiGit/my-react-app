@@ -31,6 +31,7 @@
     "babel-plugin-import": "^1.10.0",
     "less": "^3.8.1",
     "less-loader": "^4.1.0",
-    "react-app-rewired": "^1.6.2"
+    "react-app-rewired": "^1.6.2",
+    "sass-loader": "^7.1.0"
   }
 }
