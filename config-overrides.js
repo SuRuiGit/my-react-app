@@ -1,4 +1,6 @@
 const { injectBabelPlugin, getLoader } = require('react-app-rewired');
+const rewirePostcss = require('react-app-rewire-postcss');
+const pxtorem = require('postcss-pxtorem');
 const autoprefixer = require('autoprefixer');
 const theme = require('./package.json').theme;
 const fileLoaderMatcher = function (rule) {
@@ -81,6 +83,22 @@ module.exports = function override(config, env) {
             ]
         }
     );
+
+    config = rewirePostcss(config,{
+        plugins: () => [
+            require('postcss-flexbugs-fixes'),
+            require('postcss-preset-env')({
+                autoprefixer: {
+                    flexbox: 'no-2009',
+                },
+                stage: 3,
+            }),
+            pxtorem({
+                rootValue: 100,
+                propWhiteList: [],
+            })
+        ],
+    });
 
     // file-loader exclude
     let l = getLoader(config.module.rules, fileLoaderMatcher);
